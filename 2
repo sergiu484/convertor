@@ -1,0 +1,100 @@
+#include <iostream>
+
+using namespace std;
+float ani,luni,zile,minute,ore,secunde;
+void convert_ani()
+{
+    luni=ani*12;
+    zile=ani*365;
+    ore=ani*8760;
+    minute=ani*525600;
+    secunde=ani*31536000;
+}
+void convert_luni()
+{
+    ani=luni/12;
+    zile=luni*30.416666666666668;
+    ore=luni*730;
+    minute=luni*43800;
+    secunde=luni*2628000;
+}
+void convert_zile()
+{
+    ani=zile/365;
+    luni=zile/30.416666666666668;;
+    ore=zile*24;
+    minute=zile*1440;
+    secunde=zile*86400;
+}
+void convert_ore()
+{
+    ani=ore/8760;
+    luni=ore/730;
+    zile=ore/24;
+    minute=ore*60;
+    secunde=ore*3600;
+}
+void convert_minute()
+{
+    ani=minute/525600;
+    luni=minute/43800;
+    zile=minute/1440;
+    ore=minute/60;
+    secunde=minute*60;
+}
+void convert_secunde()
+{
+    ani=secunde/31536000;
+    luni=secunde/2628000;
+    zile=secunde/86400;
+    ore=secunde/3600;
+    minute=secunde/60;
+}
+int main()
+{   unsigned short n;
+    cout << "Alege 1 pentru a converta ani."<<"\n"<<"Alege 2 pentru a converta luni."<<"\n"<<"Alege 3 pentru a converta zile."<<"\n"<<"Alege 4 pentru a converta ore."<<"\n"<<"Alege 5 pentru a converta minute."<<"\n"<<"Alege 6 pentru a converta secunde." << endl;
+   cin>>n;
+   if(n==1)
+   {
+       cout<<"Alege valoare pentru a fi convertata: "<<endl;
+       cin>>ani;
+       convert_ani();
+       cout<<"Ani convertati in luni sunt: "<<luni<<"\n"<<"Ani convertati in zile sunt: "<<zile<<"\n"<<"Ani convertati in ore sunt: "<<ore<<"\n"<<"Ani convertati in minute sunt: "<<minute<<"\n"<<"Ani convertati in secunde sunt: "<<secunde<<endl;
+   }
+   else if(n==2)
+   {
+       cout<<"Alege valoare pentru a fi convertata: "<<endl;
+       cin>>luni;
+       convert_luni();
+       cout<<"Luni convertati in ani sunt: "<<ani<<"\n"<<"Luni convertati in zile sunt: "<<zile<<"\n"<<"Luni convertati in ore sunt: "<<ore<<"\n"<<"Luni convertati in minute sunt: "<<minute<<"\n"<<"Luni convertati in secunde sunt: "<<secunde<<endl;
+   }
+   else if(n==3)
+   {
+       cout<<"Alege valoare pentru a fi convertata: "<<endl;
+       cin>>zile;
+       convert_zile();
+       cout<<"Zile convertati in ani sunt: "<<ani<<"\n"<<"Zile convertati in luni sunt: "<<luni<<"\n"<<"Zile convertati in ore sunt: "<<ore<<"\n"<<"Zile convertati in minute sunt: "<<minute<<"\n"<<"Zile convertati in secunde sunt: "<<secunde<<endl;
+   }
+   else if(n==4)
+    {
+       cout<<"Alege valoare pentru a fi convertata: "<<endl;
+       cin>>ore;
+       convert_ore();
+       cout<<"Ore convertati in ani sunt: "<<ani<<"\n"<<"Ore convertati in luni sunt: "<<luni<<"\n"<<"Ore convertati in zile sunt: "<<zile<<"\n"<<"Ore convertati in minute sunt: "<<minute<<"\n"<<"Ore convertati in secunde sunt: "<<secunde<<endl;
+   }
+   else if(n==5)
+   {
+       cout<<"Alege valoare pentru a fi convertata: "<<endl;
+       cin>>minute;
+       convert_minute();
+       cout<<"Minute convertati in ani sunt: "<<ani<<"\n"<<"Minute convertati in luni sunt: "<<luni<<"\n"<<"Minute convertati in zile sunt: "<<zile<<"\n"<<"Minute convertati in ore sunt: "<<ore<<"\n"<<"Minute convertati in secunde sunt: "<<secunde<<endl;
+   }
+   else if(n==6)
+    {
+       cout<<"Alege valoare pentru a fi convertata: "<<endl;
+       cin>>secunde;
+       convert_secunde();
+       cout<<"Secunde convertati in ani sunt: "<<ani<<"\n"<<"Secunde convertati in luni sunt: "<<luni<<"\n"<<"Secunde convertati in zile sunt: "<<zile<<"\n"<<"Secunde convertati in ore sunt: "<<ore<<"\n"<<"Secunde convertati in minute sunt: "<<minute<<endl;
+   }
+    return 0;
+}
