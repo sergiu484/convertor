@@ -1,0 +1,235 @@
+#include <iostream>
+using namespace std;
+float celsius,fahrenheit,kelvin,rankine;
+float cm,feet,inch,km,m,mi,mm,nmi,yard;
+void convert_cm()
+{
+    feet=cm/ 30.48;
+    inch=cm/ 2.54;
+    km=cm/10000;
+    m=cm/100;
+    mi=cm/160934.4;
+    mm=cm/0.1;
+    nmi=cm*0.000005399;
+    yard=cm/91.44;
+}
+void convert_feet()
+{
+    cm=feet*30.48;
+    inch=feet* 12;
+    km=feet*0.0003048;
+    m=feet*0.3048;
+    mi=feet/5280;
+    mm=feet*304.8;
+    nmi=feet/ 6076.11549;
+    yard=feet/3;
+}
+void convert_inch()
+{
+    cm=inch* 2.54;
+    feet=inch/12;
+    km=inch* 0.0000254;
+    m=inch*0.0254;
+    mi=inch/ 63360;
+    mm=inch*25.4;
+    nmi=inch/ 72913.3858;
+    yard=inch/36;
+}
+void  convert_km()
+{
+    cm= km*100000;
+    feet=km/0.0003048;
+    inch=km/ 0.0000254;
+    m=km*1000;
+    mi=km/ 1.609344;
+    mm=km*1000000;
+    nmi=km/1.852;
+    yard=km/ 0.0009144;
+}
+void convert_m()
+{
+    cm=m*100;
+    feet=m /0.3048;
+    inch =m/ 0.0254;
+    km=m/1000;
+    mi=m/ 1609.344;
+    mm=m*1000;
+    nmi=m/1852;
+    yard=m/0.9144;
+}
+void convert_mi()
+{
+    cm=mi* 160934.4;
+    feet=mi* 5280;
+    inch=mi* 63360;
+    km=mi * 1.609344;
+    m=mi* 1609.344;
+    mm=mi* 1609344;
+    nmi=mi/ 1.15078;
+    yard=mi* 1760;
+}
+void convert_mm()
+{
+    cm=mm/10;
+    feet=mm/304.8;
+    inch=mm/25.4;
+    km=mm*1000000;
+    m=mm/1000;
+    mi=mm/1609344;
+    nmi=mm/ 1852000;
+    yard=mm/ 914.4;
+}
+void  convert_nmi()
+{
+    cm =nmi/0.000005399;
+    feet=nmi* 6076.11549;
+    inch=nmi* 72913.3858;
+    km=nmi*1.852;
+    m=nmi*1852;
+    mm=nmi* 1852000;
+    mi=nmi* 1.15078;
+    yard=nmi * 2025.37183;
+}
+void convert_yard()
+{
+    feet=yard*3;
+    cm=yard*91.44;
+    inch=yard*36;
+    km=yard* 0.0009144;
+    mi=yard/ 1760;
+    mm=yard* 914.4;
+    m=yard*0.9144;
+    nmi=yard/2025.37183;
+}
+void convert_Celsius()
+{
+    fahrenheit = (celsius * 9 / 5) + 32;
+    kelvin=celsius+273.15;
+    rankine=(celsius+273.15)*9/5;
+}
+void convert_Fahrenheit()
+{
+    celsius = (fahrenheit - 32) * 5 / 9;
+    kelvin = (fahrenheit +459.67) *5/9;
+    rankine = fahrenheit +459.67;
+}
+void  convert_Kelvin()
+{
+    celsius=kelvin-273.15;
+    fahrenheit=kelvin*9/5 - 459.67;
+    rankine=kelvin*9/5;
+}
+void convert_Rankine()
+{
+    celsius=(rankine-491.67)* 5/9;
+    kelvin=rankine *5/9;
+    fahrenheit=rankine-459.67;
+}
+int main()
+{
+    unsigned short n,x;
+    cout<<"Alege 1 pentru a converta temperatura."<<"\n"<<"Alege 2 pentru a converta lungimea."<<"\n"<<"Alege 3 pentru a converta aria."<<"\n"<<"Alege 4 pentru a converta volum."<<"\n"<<"Alege 5 pentru a converta viteza."<<"\n"<<"Alege 6 pentru a converta greutate."<<"\n"<<"Alege 7 pentru a converta presiune."<<endl;
+    cin>>x;
+    if(x==1)
+    {
+        cout<<"Alege 1 pentru a converta grade Celsius." <<"\n"<<"Alege 2 pentru a converta grade Fahrenheit." <<"\n"<<"Alege 3 pentru a converta grade Kelvin."<<"\n"<<"Alege 4 pentru a converta grade Rankine."<<endl;
+        cin >>n;
+        if(n==1)
+        {
+            cout << "Alege temperatura in Celsius: ";
+            cin >> celsius;
+            convert_Celsius();
+            cout << "Temperatura in Fahrenheit este: " << fahrenheit<<"\n"<< "Temperatura in Kelvin este: "<< kelvin<<"\n"<< "Temperatura in Rankine este: " << rankine<<endl;
+        }
+        else if(n==2)
+        {
+            cout<<"Alege tempetatura in Fahrenheit: ";
+            cin>>fahrenheit;
+            convert_Fahrenheit();
+            cout << "Temperatura in Celsius este: " << celsius<<" \n"<<"Temperatura in Kelvin este: "<<kelvin<<"\n<<"<<"Temperatura in Rankine este: "<<rankine<<endl;
+        }
+        else if(n==3)
+        {
+            cout<<"Alege tempetatura in Kelvin: ";
+            cin>>kelvin;
+            convert_Kelvin();
+            cout<<"Temperatura in Celsius este: "<<celsius<<"\n"<<"Temperatura in Fahrenheit este: "<<fahrenheit<<"\n"<<"Temperatura in Rankine este: "<<rankine<<endl;
+        }
+        else if(n==4)
+        {
+            cout<<"Alege tempetatura in Rankine: ";
+            cin>>rankine;
+            convert_Rankine();
+            cout<<"Temperatura in Celsius este: "<<celsius<<"\n"<<"Temperatura in Kelvin este: "<<kelvin<<"\n"<<"Temperatura in Fahrenheit este: "<<fahrenheit<<endl;
+        }
+    }
+    else if(x==2)
+    {
+        cout <<"Alege 1 pentru a converta centimetri. "<<"\n"<<"Alege 2 pentru a converta picioare. "<<"\n"<<"Alege 3 pentru a converta inch."<<"\n"<<"Alege 4 pentru a converta kilometri."<<"\n"<<"Alege 5 pentru a converta metri."<<"\n"<<"Alege 6 pentru a converta mile."<<"\n"<<"Alege 7 pentru a converta milimetri."<<"\n"<<"Alege 8 pentru a converta mile maritime. "<<"\n"<<"Alege 9 pentru a converta yard." <<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout << "Alege lungimea in centimetri: ";
+            cin >> cm;
+            convert_cm();
+            cout<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==2)
+        {
+            cout<<"Alege lungimea in picioare: ";
+            cin>>feet;
+            convert_feet();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==3)
+        {
+            cout<<"Alege lungimea in inch: ";
+            cin>>inch;
+            convert_inch();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==4)
+        {
+            cout<<"Alege lungimea in kilometri: ";
+            cin>>km;
+            convert_km();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==5)
+        {
+            cout<<"Alege lungimea in metri: ";
+            cin>>m;
+            convert_m();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==6)
+        {
+            cout<<"Alege lungimea in mile: ";
+            cin>>mi;
+            convert_mi();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile matirime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==7)
+        {
+            cout<<"Alege lungimea in milimetri: ";
+            cin>>mm;
+            convert_mm();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==8)
+        {
+            cout<<"Alege lungimea in mile maritime: ";
+            cin>>nmi;
+            convert_nmi();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==9)
+        {
+            cout<<"Alege lungimea in yard: ";
+            cin>>yard;
+            convert_yard();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<endl;
+        }
+    }
+        return 0;
+}
