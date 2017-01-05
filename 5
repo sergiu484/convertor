@@ -1,0 +1,871 @@
+#include <iostream>
+using namespace std;
+float celsius,fahrenheit,kelvin,rankine;
+float cm,feet,inch,km,m,mi,mm,nmi,yard;
+float a,ac,cm2,feet2,ha,in2,km2,m2,mm2,yd2;
+float cl,dl,in3,gal,l,ml,m3,yd3;
+float kmh,kmmin,kms,mh,mmin,ms;
+float g,kg,lb, mg,oz,t;
+float atm,bar,kpa,mpa,pa,psi;
+
+void convert_atm()
+{
+    bar=atm*1.03393136;
+    kpa=atm*101.32527379;
+    mpa=atm*0.1013252737;
+    pa=atm*101325.2738;
+    psi=atm*14.69598848;
+}
+void convert_bar()
+{
+    atm=bar/1.03393136;
+    kpa=bar*98;
+    mpa=bar*0.098;
+    pa=bar*98000;
+    psi=bar*14.21369829;
+}
+void convert_kpa()
+{
+    atm=kpa*0.0098692059;
+    bar=kpa*0.010204081;
+    mpa=kpa*0.001;
+    pa=kpa*1000;
+    psi=kpa*0.1450377;
+}
+void convert_mpa()
+{
+    atm=mpa*9.8692059;
+    bar=mpa*10.2040816;
+    kpa=mpa*1000;
+    pa=mpa*1000000;
+    psi=mpa*145.0377377;
+}
+
+void convert_pa()
+{
+    atm=pa*0.000009869;
+    bar=pa*0.000010204;
+    kpa=pa*0.001;
+    mpa=pa*0.000001;
+    psi=pa*0.000145037;
+}
+void convert_psi()
+{
+    atm=psi*0.0680457800;
+    bar=psi*0.07035466;
+    kpa=psi*6.89475729317;
+    mpa=psi*0.00689475729317;
+    pa=psi*6894.75729317;
+}
+void convert_g()
+{
+    kg=g*0.001;
+    lb=g*0.0022046;
+    mg=g*1000;
+    oz=g*0.03527399;
+    t=g*0.000001;
+}
+void convert_kg()
+{
+    g=kg*1000;
+    lb=kg*2.2046244;
+    mg=kg*1000000;
+    oz=kg*35.2739907;
+    t=kg*0.001;
+}
+void convert_lb()
+{
+    g=lb*453.592;
+    kg=lb*0.453592;
+    mg=lb*453592;
+    oz=lb*16;
+    t=lb*0.000453592;
+
+}
+void convert_mg()
+{
+    g=mg*0.001;
+    kg=mg*0.000001;
+    lb=mg*0.0000022046;
+    oz=mg*0.0000352739;
+    t=mg*0.000000001;
+
+}
+void convert_oz()
+{
+    g=oz*28.3495;
+    kg=oz*0.0283495;
+    lb=oz*0.0625;
+    mg=oz*28349.5;
+    t=oz*0.000028349;
+
+}
+void convert_t()
+{
+    g=t*1000000;
+    kg=t*1000;
+    lb=t*2204.62442;
+    mg=t*1000000000;
+    oz=t*35273.9907;
+}
+void convert_kmh()
+{
+    kmmin=kmh*0.0166666664;
+    kms=kmh*0.000277777779;
+    mh=kmh*999.999208;
+    mmin=kmh*16.666666466;
+    ms=kmh*0.27777778;
+}
+
+void convert_kmmin()
+{
+    kmh=kmmin*60.00000072;
+    kms=kmmin*0.016666667;
+    mh=kmmin*59999.95320003;
+    mmin=kmmin*1000;
+    ms=kmmin*16.666667;
+}
+void convert_kms()
+{
+    kmh=kms/0.000277777779;
+    kmmin=kms/0.016666667;
+    mh=kms*3599997.120002;
+    mmin=kms*59999.9988;
+    ms=kms*1000;
+}
+void convert_mh()
+{
+    kmh=mh/999.999208;
+    kmmin=mh/59999.95320003;
+    kms=mh/3599997.120002;
+    mmin=mh*0.016666679;
+    ms=mh*0.000277778;
+}
+void convert_mmin()
+{
+    kmh=mmin/16.666666466;
+    kmmin=mmin/1000;
+    kms=mmin/59999.9988;
+    mh=mmin/0.016666679;
+    ms=mmin*0.016666667;
+}
+void convert_ms()
+{
+    kmh=ms/0.27777778;
+    kmmin=ms/16.666667;
+    kms=ms/1000;
+    mh=ms/0.000277778;
+    mmin=ms/0.016666667;
+}
+void convert_cl()
+{
+    dl=cl*0.1;
+    in3=cl*0.61023744094;
+    gal=cl*0.002199736;
+    l=cl*0.01;
+    m3=cl*0.00001;
+    ml=cl*10;
+    yd3=cl*0.0000130794;
+}
+void convert_dl()
+{
+    cl=dl*10;
+    in3=dl*6.1023744094;
+    gal=dl*0.0219973603;
+    l=dl/10;
+    ml=dl*100;
+    m3=dl/10000;
+    yd3=dl*0.000130794182;
+}
+void convert_in3()
+{
+    cl=in3/0.61023744094;
+    dl=in3/6.1023744094;
+    gal=in3*0.00360472151;
+    l=in3*0.016387064;
+    ml=in3*16.387064;
+    m3=in3*0.000016387064;
+    yd3=in3*0.000021433326;
+}
+void convert_gal()
+{
+    cl=gal/0.002199736;
+    dl=gal/0.0219973603;
+    in3=gal/0.00360472151;
+    l=gal*4.54599;
+    ml=gal*4546;
+    m3=gal*0.004546;
+    yd3=gal*0.0059459035;
+}
+void convert_l()
+{
+    cl=l/0.01;
+    dl=l*10;
+    in3=l/0.016387064;
+    gal=l/4.54599;
+    ml=l*1000;
+    m3=l*0.001;
+    yd3=l*0.00130794182;
+}
+void convert_ml()
+{
+    cl=ml/10;
+    dl=ml/100;
+    in3=ml/16.387064;
+    gal=ml/4546;
+    l=ml/1000;
+    m3=ml*0.000001;
+    yd3=ml*0.00000130794;
+}
+void convert_yd3()
+{
+    cl=yd3/0.0000130794;
+    dl=yd3/0.000130794182;
+    gal=yd3/0.0059459035;
+    in3=yd3/0.000021433326;
+    l=yd3/0.00130794182;
+    m3=yd3*0.76456;
+    ml=yd3/0.00000130794;
+}
+void convert_m3()
+{
+    cl=m3/0.00001;
+    dl=m3*10000;
+    in3=m3/0.000016387064;
+    gal=m3/0.004546;
+    l=m3/0.001;
+    ml=m3/0.000001;
+    yd3=m3/0.76456;
+}
+void convert_a()
+{
+    ac=a*0.024710539;
+    cm2=a*1000000;
+    feet2=a*1076.42626;
+    ha=a/100;
+    in2=a*154990.7005;
+    km2=a/10000;
+    m2=a*100;
+    mm2=a*100000000;
+    yd2=a*119.598939;
+}
+void convert_ac()
+{
+    a=ac/0.024710539;
+    cm2=ac* 40468564.2;
+    feet2=ac*43561.42;
+    ha=ac* 0.404685642;
+    in2=ac*6272640;
+    km2=ac*0.00404685642;
+    m2=ac*4046.85642;
+    mm2=ac*4046856420;
+    yd2=ac* 4840;
+}
+void convert_cm2()
+{
+    a=cm2/1000000;
+    ac=cm2/40468564.2;
+    feet2=cm2/929.0304;
+    ha=cm2/100000000;
+    in2=cm2/6.4519;
+    km2=cm2*0.0000000001;
+    m2=cm2/10000;
+    mm2=cm2*100;
+    yd2=cm2/8361.2736;
+}
+void convert_feet2()
+{
+    a=feet2/1076.42626;
+    ac=feet2*43561.422;
+    cm2=feet2*929.0304;
+    ha=feet2*0.000009290304;
+    in2=feet2*144;
+    km2=feet2*0.00000009290304;
+    m2=feet2*0.09290304;
+    mm2=feet2*92903.04;
+    yd2=feet2/9;
+}
+void convert_ha()
+{
+    a=ha*100;
+    ac=ha/0.404685642;
+    cm2=ha*100000000;
+    feet2=ha/0.000009290304;
+    in2=ha/0.000000064516;
+    km2=ha/100;
+    m2=ha*10000;
+    mm2=ha*10000000000;
+    yd2=ha/0.000083612736;
+}
+void convert_in2()
+{
+    a=in2/154990.7005;
+    ac=in2/6272640;
+    cm2=in2*6.4519;
+    feet2=in2/144;
+    ha=in2*0.000000064516;
+    km2=in2*0.00000000064516;
+    m2=in2*0.00064516;
+    mm2=in2*645.16;
+    yd2=in2/1296;
+}
+void convert_km2()
+{
+    a=km2*10000;
+    ac=km2/0.00404685642;
+    cm2=km2/0.0000000001;
+    feet2=km2/0.00000009290304;
+    ha=km2*100;
+    in2=km2/0.00000000064516;
+    m2=km2*1000000;
+    mm2=km2*1000000000000;
+    yd2=km2/0.00000083612736;
+}
+void convert_m2()
+{
+    a=m2*0.01;
+    ac=m2/4046.85642;
+    cm2=m2*10000;
+    feet2=m2/0.09290304;
+    ha=m2/10000;
+    in2=m2/0.00064516;
+    km2=m2*0.000001;
+    mm2=m2*1000000;
+    yd2=m2/0.83612736;
+}
+void convert_mm2()
+{
+    a=mm2/100000000;
+    ac=mm2/4046856420;
+    cm2=mm2/100;
+    feet2=mm2/92903.04;
+    ha=mm2/10000000000;
+    in2=mm2/645.16;
+    km2=mm2/1000000000000;
+    m2=mm2/1000000;
+    yd2=mm2/836127.36;
+}
+void convert_yd2()
+{
+    a=yd2/119.598939;
+    ac=yd2/4840;
+    cm2=yd2*8361.2736;
+    feet2=yd2*9;
+    ha=yd2*0.000083612736;
+    in2=yd2*1296;
+    km2=yd2*0.00000083612736;
+    m2=yd2*0.83612736;
+    mm2=yd2*836127.36;
+}
+void convert_cm()
+{
+    feet=cm/ 30.48;
+    inch=cm/ 2.54;
+    km=cm/10000;
+    m=cm/100;
+    mi=cm/160934.4;
+    mm=cm/0.1;
+    nmi=cm*0.000005399;
+    yard=cm/91.44;
+}
+void convert_feet()
+{
+    cm=feet*30.48;
+    inch=feet* 12;
+    km=feet*0.0003048;
+    m=feet*0.3048;
+    mi=feet/5280;
+    mm=feet*304.8;
+    nmi=feet/ 6076.11549;
+    yard=feet/3;
+}
+void convert_inch()
+{
+    cm=inch* 2.54;
+    feet=inch/12;
+    km=inch* 0.0000254;
+    m=inch*0.0254;
+    mi=inch/ 63360;
+    mm=inch*25.4;
+    nmi=inch/ 72913.3858;
+    yard=inch/36;
+}
+void  convert_km()
+{
+    cm= km*100000;
+    feet=km/0.0003048;
+    inch=km/ 0.0000254;
+    m=km*1000;
+    mi=km/ 1.609344;
+    mm=km*1000000;
+    nmi=km/1.852;
+    yard=km/ 0.0009144;
+}
+void convert_m()
+{
+    cm=m*100;
+    feet=m /0.3048;
+    inch =m/ 0.0254;
+    km=m/1000;
+    mi=m/ 1609.344;
+    mm=m*1000;
+    nmi=m/1852;
+    yard=m/0.9144;
+}
+void convert_mi()
+{
+    cm=mi* 160934.4;
+    feet=mi* 5280;
+    inch=mi* 63360;
+    km=mi * 1.609344;
+    m=mi* 1609.344;
+    mm=mi* 1609344;
+    nmi=mi/ 1.15078;
+    yard=mi* 1760;
+}
+void convert_mm()
+{
+    cm=mm/10;
+    feet=mm/304.8;
+    inch=mm/25.4;
+    km=mm*1000000;
+    m=mm/1000;
+    mi=mm/1609344;
+    nmi=mm/ 1852000;
+    yard=mm/ 914.4;
+}
+void  convert_nmi()
+{
+    cm =nmi/0.000005399;
+    feet=nmi* 6076.11549;
+    inch=nmi* 72913.3858;
+    km=nmi*1.852;
+    m=nmi*1852;
+    mm=nmi* 1852000;
+    mi=nmi* 1.15078;
+    yard=nmi * 2025.37183;
+}
+void convert_yard()
+{
+    feet=yard*3;
+    cm=yard*91.44;
+    inch=yard*36;
+    km=yard* 0.0009144;
+    mi=yard/ 1760;
+    mm=yard* 914.4;
+    m=yard*0.9144;
+    nmi=yard/2025.37183;
+}
+void convert_Celsius()
+{
+    fahrenheit = (celsius * 9 / 5) + 32;
+    kelvin=celsius+273.15;
+    rankine=(celsius+273.15)*9/5;
+}
+void convert_Fahrenheit()
+{
+    celsius = (fahrenheit - 32) * 5 / 9;
+    kelvin = (fahrenheit +459.67) *5/9;
+    rankine = fahrenheit +459.67;
+}
+void  convert_Kelvin()
+{
+    celsius=kelvin-273.15;
+    fahrenheit=kelvin*9/5 - 459.67;
+    rankine=kelvin*9/5;
+}
+void convert_Rankine()
+{
+    celsius=(rankine-491.67)* 5/9;
+    kelvin=rankine *5/9;
+    fahrenheit=rankine-459.67;
+}
+int main()
+{
+    unsigned short n,x;
+    cout<<"Alege 1 pentru a converta temperatura."<<"\n"<<"Alege 2 pentru a converta lungimea."<<"\n"<<"Alege 3 pentru a converta aria."<<"\n"<<"Alege 4 pentru a converta volum."<<"\n"<<"Alege 5 pentru a converta viteza."<<"\n"<<"Alege 6 pentru a converta greutate."<<"\n"<<"Alege 7 pentru a converta presiune."<<"\n"<<"Alege 8 pentru a converta timp."<<"\n"<<"Alege 9 pentru a converta energie.<<endl;
+    cin>>x;
+    if(x==1)
+    {
+        cout<<"Alege 1 pentru a converta grade Celsius." <<"\n"<<"Alege 2 pentru a converta grade Fahrenheit." <<"\n"<<"Alege 3 pentru a converta grade Kelvin."<<"\n"<<"Alege 4 pentru a converta grade Rankine."<<endl;
+        cin >>n;
+        if(n==1)
+        {
+            cout << "Alege temperatura in Celsius: ";
+            cin >> celsius;
+            convert_Celsius();
+            cout << "Temperatura in Fahrenheit este: " << fahrenheit<<"\n"<< "Temperatura in Kelvin este: "<< kelvin<<"\n"<< "Temperatura in Rankine este: " << rankine<<endl;
+        }
+        else if(n==2)
+        {
+            cout<<"Alege tempetatura in Fahrenheit: ";
+            cin>>fahrenheit;
+            convert_Fahrenheit();
+            cout << "Temperatura in Celsius este: " << celsius<<" \n"<<"Temperatura in Kelvin este: "<<kelvin<<"\n<<"<<"Temperatura in Rankine este: "<<rankine<<endl;
+        }
+        else if(n==3)
+        {
+            cout<<"Alege tempetatura in Kelvin: ";
+            cin>>kelvin;
+            convert_Kelvin();
+            cout<<"Temperatura in Celsius este: "<<celsius<<"\n"<<"Temperatura in Fahrenheit este: "<<fahrenheit<<"\n"<<"Temperatura in Rankine este: "<<rankine<<endl;
+        }
+        else if(n==4)
+        {
+            cout<<"Alege tempetatura in Rankine: ";
+            cin>>rankine;
+            convert_Rankine();
+            cout<<"Temperatura in Celsius este: "<<celsius<<"\n"<<"Temperatura in Kelvin este: "<<kelvin<<"\n"<<"Temperatura in Fahrenheit este: "<<fahrenheit<<endl;
+        }
+    }
+    else if(x==2)
+    {
+        cout <<"Alege 1 pentru a converta centimetri. "<<"\n"<<"Alege 2 pentru a converta picioare. "<<"\n"<<"Alege 3 pentru a converta inch."<<"\n"<<"Alege 4 pentru a converta kilometri."<<"\n"<<"Alege 5 pentru a converta metri."<<"\n"<<"Alege 6 pentru a converta mile."<<"\n"<<"Alege 7 pentru a converta milimetri."<<"\n"<<"Alege 8 pentru a converta mile maritime. "<<"\n"<<"Alege 9 pentru a converta yard." <<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout << "Alege lungimea in centimetri: ";
+            cin >> cm;
+            convert_cm();
+            cout<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==2)
+        {
+            cout<<"Alege lungimea in picioare: ";
+            cin>>feet;
+            convert_feet();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==3)
+        {
+            cout<<"Alege lungimea in inch: ";
+            cin>>inch;
+            convert_inch();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==4)
+        {
+            cout<<"Alege lungimea in kilometri: ";
+            cin>>km;
+            convert_km();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==5)
+        {
+            cout<<"Alege lungimea in metri: ";
+            cin>>m;
+            convert_m();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==6)
+        {
+            cout<<"Alege lungimea in mile: ";
+            cin>>mi;
+            convert_mi();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile matirime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==7)
+        {
+            cout<<"Alege lungimea in milimetri: ";
+            cin>>mm;
+            convert_mm();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==8)
+        {
+            cout<<"Alege lungimea in mile maritime: ";
+            cin>>nmi;
+            convert_nmi();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in yard este: "<<yard<<endl;
+        }
+        else if(n==9)
+        {
+            cout<<"Alege lungimea in yard: ";
+            cin>>yard;
+            convert_yard();
+            cout<<"Lungimea in centimetri este: "<<cm<<"\n"<<"Lungimea in picioare este: "<<feet<<"\n"<<"Lungimea in inch este: "<<inch<<"\n"<<"Lungimea in kilometri este: "<<km<<"\n"<<"Lungimea in metri este: "<<m<<"\n"<<"Lungimea in mile este: "<<mi<<"\n"<<"Lungimea in milimetri este: "<<mm<<"\n"<<"Lungimea in mile maritime este: "<<nmi<<endl;
+        }
+    }
+    else if(x==3)
+    {
+        cout<<"Alege 1 pentru a converti ari."<<"\n"<<"Alege 2 pentru a converti acri." <<"\n"<<"Alege 3 pentru a converti centimetri la a 2."<<"\n"<<"Alege 4 pentru a converti picioare la a 2."<<"\n"<<"Alege 5 pentru a converti hectare."<<"\n"<<"Alege 6 pentru a converti inch la a 2."<<"\n"<<"Alege 7 pentru a converti kilometri la a 2."<<"\n"<<"ALege 8 pentru a converti metri la a 2."<<"\n"<<"Alege 9 pentru a converti milimetri la a 2."<<"\n"<<"Alege 10 pentru a converti yard la a 2."<<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>a;
+            convert_a();
+            cout<<"Valoarea in acri este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2 este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2  este: "<<feet2<<"\n"<<"Valoarea in hectare este: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==2)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>ac;
+            convert_ac();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in centimetri la a 2 este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2  este: "<<feet2<<"\n"<<"Valoarea in hectare este: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==3)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>cm2;
+            convert_cm2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in centimetri la a 2 este: "<<ac<<"\n"<<"Valoarea in picioare la a 2  este: "<<feet2<<"\n"<<"Valoarea in hectare este: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==4)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>feet2;
+            convert_feet2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in hectare este: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==5)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>ha;
+            convert_ha();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in hectare este: "<<feet2<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==6)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>in2;
+            convert_in2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2 este: "<<feet2<<"\n"<<"Valoarea in hectare: "<<ha<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==7)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>km2;
+            convert_km2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2 este: "<<feet2<<"\n"<<"Valoarea in hectare: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoare in metri la a 2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==8)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>m2;
+            convert_m2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2 este: "<<feet2<<"\n"<<"Valoarea in hectare: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoare in kilometri la a2 este: "<<km2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==9)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>mm2;
+            convert_mm2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2 este: "<<feet2<<"\n"<<"Valoarea in hectare: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<"\n"<<"Valoarea in yard la a 2 este: "<<yd2<<endl;
+        }
+        else if(n==10)
+        {
+            cout<<"Alege valoare pentru a fi convertata: "<<endl;
+            cin>>yd2;
+            convert_yd2();
+            cout<<"Valoarea in ari este: "<<a<<"\n"<<"Valoarea in acri la a 2 este: "<<ac<<"\n"<<"Valoarea in centimetri la a 2  este: "<<cm2<<"\n"<<"Valoarea in picioare la a 2 este: "<<feet2<<"\n"<<"Valoarea in hectare: "<<ha<<"\n"<<"Valoarea in inch la a 2 este: "<<in2<<"\n"<<"Valoare in metri la a2 este: "<<m2<<"\n"<<"Valoarea in milimetri la a 2 este: "<<mm2<<"\n"<<"Valoarea in kilometri la a 2 este: "<<km2<<endl;
+        }
+    }
+    else if (x==4)
+    {
+        cout<<"Alege 1 pentru a converta centilitri. "<<"\n"<<"Alege 2 pentru a converta decilitri."<<"\n"<<"Alege 3 pentru a converta inch cubi."<<"\n"<<"Alege 4 pentru a converta galoane."<<"\n"<<"Alege 5 pentru a converta litri. "<<"\n"<<"Alege 6 pentru a converta mililitri."<<"\n"<<"Alege 7 pentru a converta metri cubi. "<<"\n"<<"Alege 8 pentru a converta yarzi cubi. "<<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout << "Alege volumul in centilitri: "<<endl;
+            cin>>cl;
+            convert_cl();
+            cout<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in mililitri este: "<<ml<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==2)
+        {
+            cout << "Alege volumul in decilitri: "<<endl;
+            cin>>dl;
+            convert_dl();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in mililitri este: "<<ml<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==3)
+        {
+            cout << "Alege volumul in inch cubi: "<<endl;
+            cin>>in3;
+            convert_in3();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in mililitri este: "<<ml<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==4)
+        {
+            cout << "Alege volumul in galoane: "<<endl;
+            cin>>gal;
+            convert_gal();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in mililitri este: "<<ml<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==5)
+        {
+            cout << "Alege volumul in litri: "<<endl;
+            cin>>l;
+            convert_l();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in mililitri este: "<<ml<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==6)
+        {
+            cout << "Alege volumul in mililitri: "<<endl;
+            cin>>ml;
+            convert_ml();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==7)
+        {
+            cout << "Alege volumul in metri cubi: "<<endl;
+            cin>>m3;
+            convert_m3();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in mililitri este: "<<ml<<"\n"<<"Volumul in yarzi cubi este: "<<yd3<<endl;
+        }
+        if(n==8)
+        {
+            cout << "Alege volumul in yarzi cubi: "<<endl;
+            cin>>yd3;
+            convert_yd3();
+            cout<<"Volumul in centilitri este: "<<cl<<"\n"<<"Volumul in decilitri este: "<<dl<<"\n"<<"Volumul in inch cubi este: "<<in3<<"\n"<<"Volumul in galoane este: "<<gal<<"\n"<<"Volumul in metri cubi este: "<<m3<<"\n"<<"Volumul in litri este: "<<l<<"\n"<<"Volumul in mililitri este: "<<ml<<endl;
+        }
+    }
+    else if(x==5)
+    {
+        cout<<"Alege 1 pentru a converta KM/H." <<"\n"<<"Alege 2 pentru a converta KM/MIN."<<"\n"<<"Alege 3 pentru a converta KM/S."<<"\n"<<"Alege 4 pentru a converta M/H."<<"\n"<<"Alege 5 pentru a converta M/MIN."<<"\n"<<"Alege 6 pentru a converta M/S."<<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>kmh;
+            convert_kmh();
+            cout<<"Km/h convertati in km/min sunt: "<<kmmin<<" \n" <<"Km/h convertati in km/s sunt:"<<kms<<"\n"<<"Km/h convertati in m/h sunt:"<<mh<<"\n"<<"Km/h convertati in m/min sunt:"<<mmin<<"\n"<<"Km/h convertati in m/s sunt:"<<ms<<"\n";
+        }
+        else if(n==2)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>kmmin;
+            convert_kmmin();
+            cout<<"Km/min convertati in km/h sunt: "<<kmh<<"\n"<<"Km/min convertati in km/s sunt: "<<kms<<"\n"<<"Km/min convertati in m/h sunt:"<<mh<<"\n"<<"Km/min convertati in m/min sunt:"<<mmin<<"\n"<<"Km/min convertati in m/s sunt:"<<ms<<"\n";
+        }
+        else if(n==3)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>kms;
+            convert_kms();
+            cout<<"Km/s convertati in km/h sunt: "<<kmh<<"\n"<<"Km/s convertati in km/min sunt: "<<kmmin<<"\n"<<"Km/s convertati in m/h sunt:"<<mh<<"\n"<<"Km/s convertati in m/min sunt:"<<mmin<<"\n"<<"Km/s convertati in m/s sunt:"<<ms<<"\n";
+
+        }
+        else if(n==4)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>mh;
+            convert_mh();
+            cout<<"M/h convertati in km/h sunt: "<<kmh<<"\n"<<"M/h convertati in km/min sunt: "<<kmmin<<"\n"<<"M/h convertati in km/s sunt:"<<kms<<"\n"<<"M/h convertati in m/min sunt:"<<mmin<<"\n"<<"M/h convertati in m/s sunt:"<<ms<<"\n";
+        }
+        else if(n==5)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>mmin;
+            convert_mmin();
+            cout<<"M/min convertati in km/h sunt: "<<kmh<<"\n"<<"M/min convertati in km/min sunt: "<<kmmin<<"\n"<<"M/min convertati in km/s sunt:"<<kms<<"\n"<<"M/min convertati in m/h sunt:"<<mh<<"\n"<<"M/min convertati in m/s sunt:"<<ms<<"\n";
+        }
+        else if(n==6)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>ms;
+            convert_ms();
+            cout<<"M/s convertati in km/h sunt: "<<kmh<<"\n"<<"M/s convertati in km/min sunt: "<<kmmin<<"\n"<<"M/s convertati in km/s sunt:"<<kms<<"\n"<<"M/s convertati in m/h sunt:"<<mh<<"\n"<<"M/s convertati in m/mis sunt:"<<mmin<<"\n";
+        }
+    }
+    else if(x==6)
+    {
+        cout<<"Alege 1 pentru a converta grame."<<"\n"<<"Alege 2 pentru a converta kilograme."<<"\n"<<"Alege 3 pentru a converta funti."<<"\n"<<"Alege 4 pentru a converta miligrame."<<"\n"<<"Alege 5 pentru a converta ulcii."<<"\n"<<"Alege 6 pentru a converta tone."<<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout<<"Alege greutatea in grame pentru a fi convertata: "<<endl;
+            cin>>g;
+            convert_g();
+            cout<<"Greutate in kilograme este: "<<kg<<"\n"<<"Greutatea in funti este: "<<lb<<"\n"<<"Greutatea in miligrame este: "<<mg<<"\n"<<"Greutatea in ulcii este: "<<oz<<"\n"<<"Greutatea in tone este: "<<t<<endl;
+        }
+        else if(n==2)
+        {
+            cout<<"Alege greutatea in kilograme pentru a fi convertata: "<<endl;
+            cin>>kg;
+            convert_kg();
+            cout<<"Greutate in grame este: "<<g<<"\n"<<"Greutatea in funti este: "<<lb<<"\n"<<"Greutatea in miligrame este: "<<mg<<"\n"<<"Greutatea in ulcii este: "<<oz<<"\n"<<"Greutatea in tone este: "<<t<<endl;
+
+        }
+        else if(n==3)
+        {
+            cout<<"Alege greutatea in funti  pentru a fi convertata: "<<endl;
+            cin>>lb;
+            convert_lb();
+            cout<<"Greutate in kilograme este: "<<kg<<"\n"<<"Greutatea in grame este: "<<g<<"\n"<<"Greutatea in miligrame este: "<<mg<<"\n"<<"Greutatea in ulcii este: "<<oz<<"\n"<<"Greutatea in tone este: "<<t<<endl;
+
+        }
+        else if(n==4)
+        {
+            cout<<"Alege greutatea in miligrame pentru a fi convertata: "<<endl;
+            cin>>mg;
+            convert_mg();
+            cout<<"Greutate in kilograme este: "<<kg<<"\n"<<"Greutatea in funti este: "<<lb<<"\n"<<"Greutatea in grame este: "<<g<<"\n"<<"Greutatea in ulcii este: "<<oz<<"\n"<<"Greutatea in tone este: "<<t<<endl;
+
+        }
+        else if(n==5)
+        {
+            cout<<"Alege greutatea in ulcii pentru a fi convertata: "<<endl;
+            cin>>oz;
+            convert_oz();
+            cout<<"Greutate in kilograme este: "<<kg<<"\n"<<"Greutatea in funti este: "<<lb<<"\n"<<"Greutatea in grame este: "<<g<<"\n"<<"Greutatea in miligrame este: "<<mg<<"\n"<<"Greutatea in tone este: "<<t<<endl;
+        }
+        else if(n==6)
+        {
+            cout<<"Alege greutatea in tone pentru a fi convertata: "<<endl;
+            cin>>t;
+            convert_t();
+            cout<<"Greutate in kilograme este: "<<kg<<"\n"<<"Greutatea in funti este: "<<lb<<"\n"<<"Greutatea in grame este: "<<g<<"\n"<<"Greutatea in miligrame este: "<<mg<<"\n"<<"Greutatea in ulcii este: "<<oz<<endl;
+        }
+    }
+    else if(x==7)
+    {
+        cout<<"Alege 1 pentru a converta atmosfere." <<"\n"<<"Alege 2 pentru a converta bar."<<"\n"<<"Alege 3 pentru a converta kilopascal."<<"\n"<<"Alege 4 pentru a converta megapascal."<<"\n"<<"Alege 5 pentru a converta pascal."<<"\n"<<"Alege 6 pentru a converta funti pe tol patrat."<<endl;
+        cin>>n;
+        if(n==1)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>atm;
+            convert_atm();
+            cout<<"Atmosfere convertate in bar sunt: "<<bar<<" \n" <<"Atmosfere convertate in kilopascal sunt:"<<kpa<<"\n"<<"Atmosfere convertate in megapascal sunt:"<<mpa<<"\n"<<"Atmosfere convertate in pascal sunt:"<<pa<<"\n"<<"Atmosfere convertate in funti pe tol patrat sunt:"<<psi<<"\n";
+        }
+        else if(n==2)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>bar;
+            convert_bar();
+            cout<<"Bar convertat in atmosfere sunt: "<<atm<<" \n" <<"Bar convertat in kilopascal sunt:"<<kpa<<"\n"<<"Bar convertat in megapascal sunt:"<<mpa<<"\n"<<"Bar convertat in pascal sunt:"<<pa<<"\n"<<"Bar convertat in funti pe tol patrat sunt:"<<psi<<"\n";
+        }
+        else if(n==3)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>kpa;
+            convert_kpa();
+            cout<<"Kilopascal convertat in atmosfere sunt: "<<atm<<" \n" <<"Kilopascal convertat in bar sunt:"<<bar<<"\n"<<"Kilopascal convertat in megapascal sunt:"<<mpa<<"\n"<<"Kilopascalconvertat in pascal sunt:"<<pa<<"\n"<<"Kilopascal convertat in funti pe tol patrat sunt:"<<psi<<"\n";
+        }
+        else if(n==4)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>mpa;
+            convert_mpa();
+            cout<<"Megapascal convertat in atmosfere sunt: "<<atm<<" \n" <<"Megapascal convertat in bar sunt:"<<bar<<"\n"<<"Megapascal convertat in kilopascal sunt:"<<kpa<<"\n"<<"Megapascalconvertat in pascal sunt:"<<pa<<"\n"<<"Megapascal convertat in funti pe tol patrat sunt:"<<psi<<"\n";
+        }
+        else if(n==5)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>pa;
+            convert_pa();
+            cout<<"Pascal convertat in atmosfere sunt: "<<atm<<" \n" <<"Pascal convertat in bar sunt:"<<bar<<"\n"<<"Pascal convertat in kilopascal sunt:"<<kpa<<"\n"<<"Pascal convertat in megapascal sunt:"<<mpa<<"\n"<<"Pascal convertat in funti pe tol patrat sunt:"<<psi<<"\n";
+        }
+        else if(n==6)
+        {
+            cout<<"Alege valoarea pentru a fi convertata: "<<endl;
+            cin>>psi;
+            convert_psi();
+            cout<<"Funti pe tol patrat convertat in atmosfere sunt: "<<atm<<"\n" <<"Funti pe tol patrat convertat in bar sunt:"<<bar<<"\n"<<"Funti pe tol patrat convertat in kilopascal sunt:"<<kpa<<"\n"<<"Funti pe tol patrat convertat in megapascal sunt:"<<mpa<<"\n"<<"Funti pe tol patrat convertat in pascal sunt:"<<pa<<"\n";
+        }
+    }
+    return 0;
+}
